@@ -1,0 +1,76 @@
+@import '~@angular/material/theming';
+
+$cb-primary-palette: mat-palette($mat-grey, 900);
+$cb-accent-palette:  mat-palette($mat-light-green, 700);
+$cb-warn-palette:    mat-palette($mat-red, A700);
+
+$cb-typography: mat-typography-config(
+        $font-family: 'Yusei-magic, Regular',
+        $display-1: mat-typography-level(20px, 20px, 400),
+);
+
+@include mat-core($cb-typography);
+
+$cb-theme: mat-light-theme((
+  color: (
+    primary: $cb-primary-palette,
+    accent: $cb-accent-palette,
+    warn: $cb-warn-palette,
+  )
+));
+
+@include angular-material-theme($cb-theme);
+
+html, body { height: 100%; font-family: 'Yusei Magic', sans-serif; }
+body { margin: 0; }
+
+.accent {
+  color: mat-color($cb-primary-palette);
+}
+
+.primary {
+  color: mat-color($cb-accent-palette);
+}
+
+.warn {
+  color: mat-color($cb-warn-palette);
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-width {
+  width: 100vh;
+}
+
+.full-size {
+  width: 100vh;
+  height: 100vh;
+}
+
+.full-margin {
+  margin: 20px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.transition {
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+
+.rotate:hover {
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg); transform: rotate(360deg);
+}
